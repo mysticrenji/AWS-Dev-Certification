@@ -1,0 +1,88 @@
+AWS Container Service - task definition in json format
+AWS EC2 Container Registry
+AWS ElastiCache
+AWS RDS
+AWS API Gateway - Swagger Definitions
+OpsWorks - Configuration management service
+Kinesis Streams- Event Sourcing patterns
+AWS SQS
+AWS SNS
+AWS Step Functions
+AWS CloudWatch
+Amazon Elasticsearch Service (Amazon ES) and Kibana.
+Amazon Athena
+AWS X-Ray - Correlation ID - X-Amzn-Trace-Id(can be used with ECS,EC2 Lamda,EBS)
+Amazon Redshift
+Amazon QuickSight
+AWS Kinesis Firehose
+AWS Config - auditing service, detecting non compliance changes,looks for changes in the API like opening up port 80 to outside world
+AWS CloudTrail - logs in S3 buckets for microservices
+
+---------------------------------------------------------
+KMS - I was really surprised by the number of questions about KMS encryption, KMS SDK and encryption at all.
+
+API Gateway - And you need to know if a great details.
+
+Lambda - And also Step functions.
+
+CloudFormation - And you should know it in a good details.
+
+DynamoDB - Read/write capacity calculations, Scans, performance, LSI/GSI.
+
+CodeDeploy - Just like octopus deploy
+
+SQS
+
+Beanstalk
+
+ELB and AutoScaling
+- Autoscaling no of instance limit is 20
+- Network load balancer supports 200
+
+CloudWatch
+
+AWS SDK
+
+SNS
+
+CodePipeline
+
+CodeCommit
+-2 GB max size of file commit
+- Supports SSH and HTTPS
+
+RDS
+
+Opsworks
+-40 stacks, 40 layers, 40 instances, 40 Apps
+-By default the max no of instances that can be launched in AWS is 20. Anything more ,need to request 
+-Ops stack agents price is 0.02 per hour
+
+S3
+
+Cognito - Authentication Services . Login with FB, Google, Open ID etc.
+- Key Store - 20 MB max, Data set -1 MB, Keys -1024
+
+Btw,
+
+Zero EC2 instance type questions.
+
+Zero Price-related questions.
+
+Zero VPC and network related questions.
+
+All recommended whitepapers were very helpful.
+
+AWS Security Best Practices
+
+
+AWS Well-Architected Framework
+
+Microservices on AWS (Must Have)
+
+Blue/Green Deployments on AWS (Must Have)
+
+
+
+Strongly consistent - 1 KB - size of items/1 * no of items
+Eventually Consistent Reads - Size of item/4 * no of items

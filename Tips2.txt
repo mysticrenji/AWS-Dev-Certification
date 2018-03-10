@@ -1,0 +1,10 @@
+I just did the AWS Developer Associate Beta Exam and it was way harder than what I was expecting. I have passed the AWS Solutions Architect Associate and thought the Developer was going to be a walk in the park.
+
+There were several questions about CodeBuild, CodeCommit, CodeDeploy, CodePipeline, X-Ray, KMS, Cognito, API Gateway, and ECS. There was also a question about the differences between Memcached and Redis in Elasticache. There were a lot of questions about EB, way more than I expected and there weren't any questions on VPC.
+
+I find that simply preparing for SA, taking Developer and passing it will no longer be true. The new version of the exam showed a lot of questions and regarding the new Developer Tools, Security and Identity, Containers and Serverless applications.
+
+ECS
+API Gateway
+Serverless applications
+Elasticache

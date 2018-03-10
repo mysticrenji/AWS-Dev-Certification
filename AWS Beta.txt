@@ -1,0 +1,71 @@
+Just from exam. Here is me thoughts:
+
+Overall - it is MUCH MORE complicated exam then Solutions Architect Associate I took last year, where I got 97% score and still wondering what I have missed.
+
+Only a 10-15 questions out of 70 were as simple as I had on SAA Exam.
+
+I did't take Developer exam before so don't know how complicated it is, but for current BETA you have to study much harder than for SAA exam.
+
+It is 150 minutes and 70 questions total. When I get to the very last question I had about 70 minutes left and 22 questions flagged for review. For all of this 22 questions I was not sure what the correct answer is. I spend all remaining time reviewing my answers (all answers, and found some mistakes in non-flagged questions as well).
+
+Here is my list of AWS services FAQs I would recommend to read:
+
+KMS - I was really surprised by the number of questions about KMS encryption, KMS SDK and encryption at all.
+
+API Gateway - And you need to know if a great details.
+
+Lambda - And also Step functions.
+
+CloudFormation - And you should know it in a good details.
+
+DynamoDB - Read/write capacity calculations, Scans, performance, LSI/GSI.
+
+CodeDeploy
+
+SQS
+
+Beanstalk
+
+ELB and AutoScaling
+
+IAM
+
+CloudWatch
+
+AWS SDK
+
+SNS
+
+CodePipeline
+
+CodeCommit
+
+RDS
+
+Opsworks
+
+S3
+
+Cognito
+
+and many more...
+
+Btw,
+
+Zero EC2 instance type questions.
+
+Zero Price-related questions.
+
+Zero VPC and network related questions.
+
+All recommended whitepapers were very helpful.
+
+AWS Security Best Practices
+
+AWS Well-Architected Framework
+
+Microservices on AWS (Must Have)
+
+Blue/Green Deployments on AWS (Must Have)
+
+Hope it helps.

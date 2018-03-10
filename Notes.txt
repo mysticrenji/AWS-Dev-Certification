@@ -1,0 +1,447 @@
+Some of the noes I had are:
+
+IAM:
+
+1). Temporary access - default temporary access - 12 hours, minimum - 15 minutes, maximum - 36 hours
+
+EC2:
+
+1). 1 subnet - 1 availability zone
+
+2). CloudWatch - 5 minutes normal (1 minute if you pay more)
+
+3). Metadata link - 169.254.169.254/latest/metadata
+
+4). Elastic IP addresses - 5 per region (ipv4)
+
+Lambda:
+
+1). 5 minute limit
+
+S3:
+
+1). Largest file size is 5 TB
+
+2). Largest file size per put is 5 GB
+
+3). 100 buckets per AWS account
+
+4). Main S# - 9.99% availability, 99 - 11 9's durability
+
+5). IA - 30 days, 128 KB min size limit
+
+6). Glacier - 90 days, 3 to 5 hours
+
+7). Cloud Front - TTL -Min TTL in Edge Cached -0 sec ,Max- 365 days in secs and default -24hours in secs
+
+8). Gateway interface
+
+File interface - 5 TB file limit
+
+Volume interface
+
+Gateway cached (volume cached) - 1 PB
+
+Gateway stored (volume stored) - 512 TB
+
+Tape interface
+
+Gateway virtual tape library - virtual tape 1 PB
+
+9). Snowball (PB's of data)/snowball edge (100 TB)/snowmobile (100 PB)
+
+Dynamo:
+
+1). Spread across 3 distinct data centers
+
+2). 5 local secondary indexes per table and 5 global secondary indexes per table
+
+3). BatchGetItem - 100 items and 16 MB
+
+4). BatchWriteItem - 25 items and 16 MB
+
+5). Query - 1 MB
+
+6). Eventual consistent - 2 reads per second
+
+Strongly consistent - 1 read per second
+
+7). Writes - 1 write per second
+
+8). Aggregate size of an item in table- cannot exceed 400KB
+
+9). Every partition size (table, local secondary indexes) - 10 GB
+
+10). Auto scaling - target Utilization is 70% (allowed range is 20% - 80% in one percent increments), minimum capacity is 1 unit and maximum capacity is the table limit for your account in the region.
+
+11). An AWS account places some default limits on the throughput you can provision. These are the limits unless you request a higher amount.
+
+US East (N. Virginia) Region:
+
+Per table – 40,000 read capacity units and 40,000 write capacity units
+
+Per account – 80,000 read capacity units and 80,000 write capacity units
+
+All Other Regions:
+
+Per table – 10,000 read capacity units and 10,000 write capacity units
+
+Per account – 20,000 read capacity units and 20,000 write capacity units
+
+12). Decrease read/write units - every 4 hours
+
+13). For any AWS account, there is an initial limit of 256 tables per region.
+
+14). You can project a total of up to 20 attributes into all of a table's local and global secondary indexes. This only applies to user-specified projected attributes.
+
+15). The minimum length of a partition key value is 1 byte. The maximum length is 2048 bytes.
+
+16). The minimum length of a sort key value is 1 byte. The maximum length is 1024 bytes.
+
+17). Names for tables and secondary indexes must be at least 3 characters long, but no greater than 255 characters long. A-Z, a-z, 0 to 9, _, -, .
+
+18). Dynamo stream - 24 hours
+
+19). A single partition can hold approximately 10 GB of data, and can support a maximum of 3,000 read capacity units or 1,000 write capacity units.
+
+20). Cannot increase # of secondary indexes
+
+SQS:
+
+1). Limit is 256 KB per message, 10 messages
+
+2). Visibility timeout - max of 12 hours, 30 seconds is default
+
+3). Long polling - max of 20 seconds
+
+4). Maximum rention period for SQS messages - 14 days
+
+5). No maximum # of queues
+
+SNS:
+
+1). Subscription will expire in 3 days if not confirmed
+
+2). 256 topic name length
+
+SWF:
+
+1). Maximum workflow is 1 year
+
+2). Can only have a maximum of 1,000 open activity tasks per workflow execution
+
+3). Max of 100 domains
+
+4). Can only have a maximum of 10,000 workflow activity types
+
+CloudFormation:
+3
+1). 60 parameters and 60 outputs
+
+VPC:
+
+1). 5 VPC's per region
+
+2). 20 EC2 instances within a VPC
+
+3). 200 subnets per VPC
+
+1). Command line interfaces:
+
+Describe instances - shows EC2 instances
+
+Describe images - shows AMI images
+
+Start instances - start stopped instances
+
+Run instances - run instances
+
+Terminate instances - stop instances
+
+2). Supported SDK:
+
+Andriod
+
+Browser
+
+IOS
+
+Java
+
+.net
+
+node JS
+
+PHP
+
+Python
+
+Ruby
+
+Go
+
+C++
+
+AWS Mobile
+
+3). Lambda:
+
+Triggers - 2A, 4C, D, K, I, 2S - API Gateway, Alexa, CloudFront, CloudWatch, CodeCommit, Cognito, Dynamo, Kinesis, IOT, SNS, S3
+
+Languages - C#, java, .net, python
+
+4) S3 common request headers: 7 x 3
+
+Authorization - information required for request authorization
+
+Content-length - length of message without headers
+
+Content-type - content type of the resource in the request content of the body (text/plain)
+
+Content-MD5 - MD5 digest of the message without the header
+
+Date - current date and time of the requester
+
+Expect - put a 100 in field, application doesn't send a request until it receives an acknowledgement
+
+Host - path (s3.amazonaws.com) or virtual (bucketname.s3.amazonaws.com)
+
+X-amz-content-sha256 - hash of the request payload
+
+X-amx-date - current date/time of requester
+
+X-amz-security-token - security token
+
+5). S3 API calls:
+
+Get object - returns object
+
+Delete object - removes the null version (if there is one) of an object and inserts a delete marker, which becomes the current version of the object. If there isn't a null version, S3 does not remove any objects. To remove a specific version, you must be the bucket owner and you must use the versionId subresource
+
+Head object - returns metadata of the object
+
+Post object - alternate form of PUT that enables browser-based uploads as a way of putting S3 objects in buckets
+
+Put object - add an object to bucket
+
+Upload part - uploads part in multipart upload
+
+Multi-object delete - delete multiple S3 objects
+
+6). S3 bucket names:
+
+Each bucket name can be between 3 and 63 characters and contain lower case letters, numbers, period, and dashes
+
+Each label in the bucket name must start with a lowercase letter or number
+
+Bucket name cannot contain underscores, end with a dash, have consecutive periods, or use dashes adjusted to periods
+
+Bucket name cannot be formatted as IP address
+
+7). Dynamo API's:
+
+CreateTable – creates a table and specifies the primary index used for data access
+
+UpdateTable – updates the provisioned throughput values for the given table
+
+DeleteTable – deletes a table
+
+DescribeTable – returns table size, status, and index information
+
+ListTables – returns a list of all tables associated with the current account and endpoint
+
+DescribeLimits - provides provisioned limits (AWS account, region, tables created)
+
+CreateIndex - create a new index on a table
+
+PutItem – creates a new item, or replaces an old item with a new item (including all the attributes). If an item already exists in the specified table with the same primary key, the new item completely replaces the existing item. You can also use conditional operators to replace an item only if its attribute values match certain conditions, or to insert a new item only if that item doesn’t already exist.
+
+UpdateItem – edits an existing item's attributes. You can also use conditional operators to perform an update only if the item’s attribute values match certain conditions.
+
+DeleteItem – deletes a single item in a table by primary key. You can also use conditional operators to perform a delete an item only if the item’s attribute values match certain conditions.
+
+GetItem – returns a set of attributes for an item that matches the primary key. The GetItem operation provides an eventually consistent read by default. If eventually consistent reads are not acceptable for your application, use ConsistentRead.
+
+Query – gets one or more items using the table primary key, or from a secondary index using the index key. You can narrow the scope of the query on a table by using comparison operators or expressions. You can also filter the query results using filters on non-key attributes. Supports both strong and eventual consistency. A single response has a size limit of 1 MB.
+
+Scan – gets all items and attributes by performing a full scan across the table or a secondary index. You can limit the return set by specifying filters against one or more attributes.
+
+BatchWriteItem – inserts, replaces, and deletes multiple items across multiple tables in a single request, but not as a single transaction. Supports batches of up to 25 items to Put or delete, with a maximum total request size of 16 MB
+
+BatchGetItem – returns the attributes for multiple items from multiple tables using their primary keys. A single response has a size limit of 16 MB and returns a maximum of 100 items. Supports both strong and eventual consistency.
+
+8). SQS API calls:
+
+CreateQueue - create new queue
+
+DeleteQueue - delete queue
+
+ListQueues - list queues
+
+PurgeQueue - delete message in queue
+
+SendMessage - send message to queue
+
+ReceiveMessage - receive messasge from queue
+
+DeleteMessage - delete message
+
+ChangeMessageVisibility - change visibility timeout
+
+** Batch forms of all of these
+
+Use client extended java library to send beyond 256KB
+
+ReceiveMessageWaitTimeSeconds - use with long polling
+
+9). SNS API calls:
+
+CreateTopic - create a new topic
+
+DeleteTopic - delete a topic
+
+ListTopics - list a st of topics
+
+SetTopicAttributes - change topic value
+
+GetTopicAttributes - get list of topic values
+
+ListSubscriptions - list subcriptions of requester
+
+AddPermission - add statement to topic's access control policy
+
+RemovePermission - removes a statement from topic's access control policy
+
+Subscribe - subscribe an endpoing by sending a confirmation message
+
+UnSubscribe - deletes a subcription
+
+ConfirmSubscription - validates owners intent to receive messages
+
+Publish - senda a message to SNS
+
+10). SNS message:
+
+When SNS sends a subscription confirmation, notification, or unsubscribe confirmation message to HTTP/HTTPS endpoints, it sends a POST message with a number of SNS-specific header values. You can use these header values to do things such as identify the type of message without having to parse the JSON message body to read the Type value.
+
+3 SNS messages - subsribe, unsubscribe, notify
+
+11). SNS HTTP/HTTPS headers:
+
+x-amz-sns-message-type - type of message. The possible values are SubscriptionConfirmation, Notification, and UnsubscribeConfirmation.
+
+x-amz-sns-message-id - universally unique identifier, unique for each message published. For a notification that SNS resends during a retry, message ID of the original message is used.
+
+x-amz-sns-topic-arn - ARN for the topic that this message was published to.
+
+x-amz-sns-subscription-arn - ARN for the subscription to this endpoint.
+
+12). SNS message layout:
+
+Message - actual message being sent
+
+Message ID - universally unique identifier, unique for each message published. For a notification that SNS resends during a retry, message ID of the original message is used.
+
+Subject - subject parameter specified when notification was published to the topic. Optional parameter. If no Subject is specified, then name/value pair does not appear in this JSON document.
+
+Signature - Base64-encoded "SHA1withRSA" signature of the Message, MessageId, Subject (if present), Type, Timestamp, and TopicArn values.
+
+SignatureVersion - Version of the Amazon SNS signature used.
+
+SigningCertURL - URL to the certificate that was used to sign the message.
+
+Timestamp - the time (GMT) when the notification was published.
+
+Token - value you can use with the ConfirmSubscription action to re-confirm the subscription. Alternatively, you can simply visit the SubscribeURL.
+
+TopicARN - Amazon Resource Name (ARN) for the topic that this message was published to.
+
+Type - type of message.
+
+Subscribe/Unsubscribe URL - URL that you can use to unsubscribe/subscrib the endpoint from this topic.
+
+13). SWF API:
+
+RegisterDomain - setup domain at beginning
+
+StartWorkflowExecution - starts a sequence of workflow tasks and makes the first task available to one of your application hosts
+
+DescribeWorkflowExecution - provides status of your workflow executions and tasks
+
+TerminateWorkflowExecution - stop driving a particular workflow execution forward. SWF will not assign any more tasks of this particular workflow execution to application host.
+
+PollForActivityTask - your application hosts (in the cloud or on premises) request and execute workflow tasks in a continuous loop
+
+RespondActivityTaskCompleted - an application host tells SWF that it successfully completed a task. SWF will then continue the workflow execution by making the next task available to an application host.
+
+14). ElasticBeanStalk languages:
+
+Java
+
+PHP
+
+Python
+
+Node.js
+
+Ruby
+
+.Net
+
+Go
+
+Docker
+
+15). ElasticBeanStalk resources that can be created
+
+EC2
+
+Elastic Load Balancers
+
+Auto Scaling
+
+RDS
+
+S3
+
+SNS
+
+16). Cloudformation API:
+
+Fn::Base64 - returns representation of the input string
+
+Condition Functions - Fn::And, Fn::Equals, Fn::If, Fn::Not, Fn::Or
+
+Fn::FindInMap - get value of keys in 2 level map in Mappings section
+
+Fn::GetAtt - get output data
+
+Fn::GetAZs - get availability zones
+
+Fn::ImportValue - get output exported by another stack
+
+Fn::Join - appends a set of values into a single value
+
+Fn::Select - returns a single object from a list of objects
+
+Fn::Split - split a list of strings into single values
+
+Fn::Sub - substitute values in input string with values you specify
+
+Ref - returns the value of the specified value or resource
+
+Liststackrecources - returns descriptions of stack resources
+
+17). Mobile push API:
+
+PlatformApplicationArn
+
+18). S3 error codes:
+
+400 - no header/bad request
+
+403 - access denied
+
+404 - not found
+
+409 - conflict (bucket already exists) (bucket not empty)
